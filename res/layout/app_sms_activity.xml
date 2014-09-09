@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/app_sms_content_et"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:hint="@string/app_sms_content"
+        android:padding="10dp"
+        android:textSize="@dimen/text_size"
+        android:textColor="@color/black"
+        android:gravity="top"
+        />
+</LinearLayout>

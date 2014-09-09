@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@color/app_bg"
+    >
+
+    <TextView
+        android:id="@+id/register_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="@string/new_user_register"
+        android:textColor="#FF0000"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/register_title_tv"
+        android:background="@drawable/register_backgroud" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+             >
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rgt_user_name" />
+
+            <EditText
+                android:id="@+id/register_user_name_et"
+                style="@style/registerEditStyle"
+                android:background="@drawable/input_edit_selector"
+                android:hint="@string/user_name" 
+                android:maxLength="20"
+                android:focusable="true"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_marginBottom="20dp"
+             android:gravity="center">
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rgt_password" />
+
+            <EditText
+                android:id="@+id/register_password_et"
+                style="@style/registerEditStyle"
+                android:layout_span="2"
+                android:background="@drawable/input_edit_selector"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                 android:text="111" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" 
+             android:gravity="center">
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rgt_comfirm_password" />
+
+            <EditText
+                android:id="@+id/register_confirm_password_et"
+                style="@style/registerEditStyle"
+                android:background="@drawable/input_edit_selector"
+                android:hint="@string/rgt_input_comfirm_password"
+                android:text="111"
+                android:inputType="textPassword" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_marginBottom="20dp"
+            android:gravity="center">
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rgt_email" />
+
+            <EditText
+                android:id="@+id/register_email_et"
+                style="@style/registerEditStyle"
+                android:background="@drawable/input_edit_selector"
+                android:hint="@string/rgt_input_email"
+                android:inputType="textEmailAddress" 
+                android:text="a123demi@1256.com"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:layout_marginBottom="20dp"
+            android:gravity="center">
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rgt_security_code" />
+            <EditText
+                android:id="@+id/register_security_code_et"
+                style="@style/registerEditStyle"
+                android:background="@drawable/input_edit_selector" 
+                android:text="a"
+               />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/register_btn"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:background="@drawable/btn_selector"
+                android:text="@string/rgt_comfirm_register" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

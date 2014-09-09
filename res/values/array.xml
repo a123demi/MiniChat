@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string-array name="app_list_name">
+        <item>语音消息</item>
+        <item>电话</item>
+        <item>短信</item>
+        <item>用户详情</item>
+    </string-array>
+</resources>

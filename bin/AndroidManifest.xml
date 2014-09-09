@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lming.minichat"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+    <!-- 注意：这里需要给工程添加打电话和发短信的权限 -->  
+    <uses-permission android:name="android.permission.CALL_PHONE" />  
+    <uses-permission android:name="android.permission.SEND_SMS" />  
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    
+    <application
+        android:name="com.lming.minichat.MainApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/mi_chat_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.lming.minichat.IndexActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.lming.minichat.LoginActivity"
+            android:label="@string/login_label" >
+        </activity>
+        <activity android:name="com.lming.minichat.BaseActivity" >
+        </activity>
+        <activity
+            android:name="com.lming.minichat.RegisterActivity"
+            android:label="@string/register_label" >
+        </activity>
+        <activity
+            android:name="com.lming.minichat.UserMainActivity"
+            android:label="@string/main_label" >
+        </activity>
+        <activity
+            android:name="com.lming.minichat.GroupManagerActivity"
+            android:label="@string/group_manager_label" >
+        </activity>
+        <activity
+            android:name="com.lming.minichat.GroupManagerAddActivity"
+            android:label="@string/group_manager_label"
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar.MinWidth" >
+        </activity>
+         <activity
+            android:name="com.lming.minichat.ApplicationListActivity"
+            android:label="@string/group_manager_label"
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar.MinWidth" >
+        </activity>
+    </application>
+
+</manifest>

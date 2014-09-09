@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg" >
+
+    <RelativeLayout
+        android:id="@+id/group_manager_top_rl"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true" >
+
+        <TextView
+            android:id="@+id/group_manager_add_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:drawableLeft="@drawable/group_manager_add"
+            android:text="添加分组"
+            android:textSize="@dimen/text_size" 
+            android:background="@drawable/group_manager_selector"
+            />
+
+        <Button
+            android:id="@+id/group_manager_finish_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:text="完成"
+            android:textSize="@dimen/text_size" 
+            android:background="@drawable/group_manager_selector"/>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/group_manager_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/group_manager_top_rl" />
+
+</RelativeLayout>

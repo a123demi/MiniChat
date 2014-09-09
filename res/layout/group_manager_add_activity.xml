@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/main_body_bg" >
+
+    <TextView
+        android:id="@+id/group_add_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/add_group"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_text_size" />
+
+    <TextView
+        android:id="@+id/group_add_input_tip_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/group_add_title_tv"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/add_group_title_tip"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:id="@+id/group_add_input_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/group_add_input_tip_tv"
+        android:layout_marginTop="20dp"
+        android:hint="@string/add_group_input_hint"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/group_add_btns_ll"
+        android:background="#CFCFCF" />
+
+    <LinearLayout
+        android:id="@+id/group_add_btns_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/group_add_cancle_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector"
+            android:text="@string/add_group_cancle" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="#CFCFCF" />
+
+        <Button
+            android:id="@+id/group_add_confirm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector"
+            android:text="@string/add_group_confirm" />
+    </LinearLayout>
+
+</RelativeLayout>
