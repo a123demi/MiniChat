@@ -24,6 +24,7 @@ import com.lming.minichat.bean.ApplicationListBean;
 import com.lming.minichat.bean.UserBean;
 import com.lming.minichat.user.UserInfoManager;
 import com.lming.minichat.util.ToastUtil;
+import com.lming.minichat.util.ViewUtil;
 
 public class ApplicationListActivity extends BaseActivity {
 	private GridView appListGv;
@@ -177,7 +178,10 @@ public class ApplicationListActivity extends BaseActivity {
 	 * 跳转进入用户详情
 	 */
 	private void goToUserDetail() {
-
+		Intent intent = ViewUtil.getIntent(this, UserDetailActivity.class);
+		intent.putExtra("loginName", loginName);
+		this.startActivity(intent);
+		this.finish();
 	}
 
 	/**

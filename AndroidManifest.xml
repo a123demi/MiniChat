@@ -7,11 +7,11 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
-    <!-- 注意：这里需要给工程添加打电话和发短信的权限 -->  
-    <uses-permission android:name="android.permission.CALL_PHONE" />  
-    <uses-permission android:name="android.permission.SEND_SMS" />  
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    
+    <!-- 注意：这里需要给工程添加打电话和发短信的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:name="com.lming.minichat.MainApplication"
         android:allowBackup="true"
@@ -48,10 +48,14 @@
             android:label="@string/group_manager_label"
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar.MinWidth" >
         </activity>
-         <activity
+        <activity
             android:name="com.lming.minichat.ApplicationListActivity"
             android:label="@string/group_manager_label"
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar.MinWidth" >
+        </activity>
+        <activity
+            android:name="com.lming.minichat.UserDetailActivity"
+            android:label="@string/user_detail_label" >
         </activity>
     </application>
 

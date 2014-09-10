@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/user_detail_btns_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/user_detail_cancle_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector"
+            android:text="@string/add_group_cancle" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="#CFCFCF" />
+
+        <Button
+            android:id="@+id/user_detail_confirm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_selector"
+            android:text="@string/add_group_confirm" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/user_detail_btns_ll"
+        android:background="@drawable/register_backgroud" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center" >
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/user_name_to" />
+
+            <EditText
+                android:id="@+id/user_detail_name_et"
+                style="@style/registerEditStyle"
+                android:background="@drawable/input_edit_selector"
+				android:enabled="false"                
+                android:hint="@string/user_name"
+                android:maxLength="20" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center" >
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nick_name" />
+
+            <EditText
+                android:id="@+id/user_detail_nick_name_et"
+                style="@style/registerEditStyle"
+                android:background="@drawable/input_edit_selector"
+                android:hint="@string/user_name"
+                android:maxLength="20" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center" >
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sex" />
+
+            <Spinner
+                android:id="@+id/user_detail_sex_sp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_edit_selector" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center" >
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/group" />
+
+            <EditText
+                android:id="@+id/user_detail_group_et"
+                style="@style/registerEditStyle"
+                android:background="@drawable/input_edit_selector"
+                android:enabled="false" 
+                android:hint="@string/group"
+                android:maxLength="20" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center" >
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email" />
+
+            <EditText
+                android:id="@+id/user_detail_email_et"
+                style="@style/registerEditStyle"
+                android:background="@drawable/input_edit_selector"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:maxLength="20" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center" >
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/old" />
+
+            <EditText
+                android:id="@+id/user_detail_old_et"
+                style="@style/registerEditStyle"
+                android:background="@drawable/input_edit_selector"
+                android:hint="@string/old"
+                android:inputType="number"
+                android:maxLength="20" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center" >
+
+            <TextView
+                style="@style/registerNameStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/telphone" />
+
+            <EditText
+                android:id="@+id/user_detail_telphone_et"
+                style="@style/registerEditStyle"
+                android:background="@drawable/input_edit_selector"
+                android:hint="@string/telphone"
+                android:inputType="phone"
+                android:maxLength="20" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

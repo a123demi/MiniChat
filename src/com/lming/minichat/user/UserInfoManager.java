@@ -167,6 +167,19 @@ public class UserInfoManager {
 		}
 		return userList;
 	}
+	
+	public void updateUser(UserBean userBean){
+		userMap.put(userBean.getLoginName(), userBean);
+	}
+	
+	/**
+	 * 根据Id获取GroupBean
+	 * @param groupUserId
+	 * @return
+	 */
+	public GroupBean getGroupBeanByGroupUserId(int groupUserId){
+		return groupMap.get(groupUserId);
+	}
 
 	/**
 	 * @return the mSelfUserBean

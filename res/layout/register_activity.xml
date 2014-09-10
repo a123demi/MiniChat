@@ -36,7 +36,7 @@
                 style="@style/registerNameStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/rgt_user_name" />
+                android:text="@string/user_name_to" />
 
             <EditText
                 android:id="@+id/register_user_name_et"
@@ -57,7 +57,7 @@
                 style="@style/registerNameStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/rgt_password" />
+                android:text="@string/password_to" />
 
             <EditText
                 android:id="@+id/register_password_et"
@@ -100,7 +100,7 @@
                 style="@style/registerNameStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/rgt_email" />
+                android:text="@string/email" />
 
             <EditText
                 android:id="@+id/register_email_et"
