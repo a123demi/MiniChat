@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/message_bottom_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/message_msg_bottom_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_bg" >
+
+            <FrameLayout
+                android:id="@+id/message_toggle_add_send_fl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp" >
+
+                <ImageView
+                    android:id="@+id/message_add_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/message_add_selector"
+                    android:src="@drawable/emotionstore_add_icon" />
+
+                <Button
+                    android:id="@+id/message_send_text_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@drawable/message_talk_send_selector"
+                    android:text="发送"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/message_bottom_fl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/message_toggle_add_send_fl" >
+
+                <RelativeLayout
+                    android:id="@+id/message_bottom_text_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" >
+
+                    <ImageView
+                        android:id="@+id/message_voice_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/message_voice_selector" />
+
+                    <com.lming.minichat.customview.CustomEmotionsEditText
+                        android:id="@+id/message_content_et"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/message_voice_iv" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/message_bottom_talk_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:id="@+id/message_keyboard_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/message_voice_selector" />
+
+                    <Button
+                        android:id="@+id/message_send_talk_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/message_keyboard_iv"
+                        android:background="@drawable/message_talk_send_selector"
+                        android:gravity="center"
+                        android:text="按住 说话" />
+                </RelativeLayout>
+            </FrameLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/message_emotions_bottom_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/message_bottom_ll"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/main_body_bg" >
+
+        <ListView
+            android:id="@+id/message_info_lv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:listSelector="#00000000"  
+            android:divider="#00000000">
+        </ListView>
+    </LinearLayout>
+
+</RelativeLayout>

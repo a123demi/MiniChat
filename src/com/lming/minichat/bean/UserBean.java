@@ -1,19 +1,19 @@
 package com.lming.minichat.bean;
 
 public class UserBean {
-	public int id;
-	public String loginName;
-	public String password;
-	public String nickName;
+	private int id;
+	private String loginName;
+	private String password;
+	private String nickName;
 
-	public String email;
-	public String telphone;
-	public int old;
-	public int sex;
-	public long birthDay;
-	public long registerDate;
+	private String email;
+	private String telphone;
+	private int old;
+	private int sex;
+	private long birthDay;
+	private long registerDate;
 	
-	public int groupUserId;
+	private int groupUserId;
 	public int getId() {
 		return id;
 	}

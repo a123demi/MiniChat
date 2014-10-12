@@ -1,11 +1,11 @@
 package com.lming.minichat.bean;
 
 public class GroupBean {
-	public int id;
-	public String groupName;
-	public String groupId;
+	private int id;
+	private String groupName;
+	private String groupId;
 	
-	public long groupDate;
+	private long groupDate;
 	
 	public GroupBean(){
 		

@@ -84,7 +84,7 @@ public class UserInfoManager {
 
 		if (userBean.getLoginName().equals(this.getmSelfLoginName())) {
 			this.setmSelfUserBean(userBean);
-			this.setmGroupUserId(userBean.groupUserId);
+			this.setmGroupUserId(userBean.getGroupUserId());
 		}
 
 		int groupUserId = userBean.getGroupUserId();

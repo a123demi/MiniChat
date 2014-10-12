@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
+
+    <LinearLayout
+        android:id="@+id/layer_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal" >
+
+        <RadioGroup
+            android:id="@+id/RadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:onClick="setMapMode"
+                android:text="普通图" />
+
+            <RadioButton
+                android:id="@+id/statellite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="setMapMode"
+                android:text="卫星图" />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/traffice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="false"
+            android:onClick="setTraffic"
+            android:text="交通图" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/layer_ll"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dip" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/button1"
+        android:layout_marginTop="30dip"
+        android:background="#D000"
+        android:minWidth="100dip"
+        android:orientation="vertical"
+        android:padding="2dp" >
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="定位icon" >
+
+            <RadioButton
+                android:id="@+id/defaulticon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="默认图标"
+                android:textColor="#FFFFFF" >
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/customicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="自定义图标"
+                android:textColor="#FFFFFF" >
+            </RadioButton>
+        </RadioGroup>
+    </LinearLayout>
+
+</RelativeLayout>

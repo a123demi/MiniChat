@@ -70,6 +70,7 @@ public class ApplicationListActivity extends BaseActivity {
 					goToUserDetail();
 					break;
 				}
+				ApplicationListActivity.this.finish();
 			}
 		});
 	}
@@ -93,9 +94,9 @@ public class ApplicationListActivity extends BaseActivity {
 		appListBeanList.clear();
 		appListNameArray = this.getResources().getStringArray(
 				R.array.app_list_name);
-		int[] appImgIds = new int[] { R.drawable.app_message_selector,
-				R.drawable.app_phone_selector, R.drawable.app_sms_selector,
-				R.drawable.app_user_detail_selector };
+		int[] appImgIds = new int[] { R.drawable.app_list_chat_default,
+				R.drawable.app_list_phone_default, R.drawable.app_list_sms_default,
+				R.drawable.app_list_user_detail_default };
 		for (int i = 0; i < appListNameArray.length; i++) {
 			ApplicationListBean appBean = new ApplicationListBean();
 			appBean.setAppName(appListNameArray[i]);
@@ -111,7 +112,10 @@ public class ApplicationListActivity extends BaseActivity {
 	 * 跳转进入语音消息界面
 	 */
 	private void goToVoiceMsg() {
-
+		Intent msgIntent = ViewUtil.getIntent(this, MessageActivity.class);
+		msgIntent.putExtra("loginName", loginName);
+		msgIntent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+		this.startActivity(msgIntent);
 	}
 
 	/**
@@ -126,6 +130,7 @@ public class ApplicationListActivity extends BaseActivity {
 		// 直接连接打电话
 		Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"
 				+ userBean.getTelphone()));
+		intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 		startActivity(intent);
 	}
 
@@ -178,9 +183,9 @@ public class ApplicationListActivity extends BaseActivity {
 	 * 跳转进入用户详情
 	 */
 	private void goToUserDetail() {
-		Intent intent = ViewUtil.getIntent(this, UserDetailActivity.class);
-		intent.putExtra("loginName", loginName);
-		this.startActivity(intent);
+		Intent detailIntent = ViewUtil.getIntent(this, UserDetailActivity.class);
+		detailIntent.putExtra("loginName", loginName);
+		this.startActivity(detailIntent);
 		this.finish();
 	}
 
@@ -219,4 +224,5 @@ public class ApplicationListActivity extends BaseActivity {
 		}
 
 	}
+	
 }

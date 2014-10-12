@@ -3,6 +3,7 @@ package com.lming.minichat;
 import java.util.HashMap;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,7 @@ import com.lming.minichat.db.DBOperator;
 import com.lming.minichat.user.UserInfoManager;
 import com.lming.minichat.util.ToastUtil;
 
-public class LoginActivity extends BaseActivity implements OnClickListener,OnCheckedChangeListener {
+public class LoginActivity extends Activity implements OnClickListener,OnCheckedChangeListener {
 	private Button loginBtn,registerBtn;
 	private EditText userNameEt,passwordEt;
 	private CheckBox savePasswordCb,autoLoginCb;
@@ -32,12 +33,12 @@ public class LoginActivity extends BaseActivity implements OnClickListener,OnChe
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_activity);
+		MainApplication.getInstance().addActivity(this);
 		userInfoManager = UserInfoManager.getInstance();
 		findById();
 	}
 	
-	@Override
-	protected void findById(){
+	private void findById(){
 		loginBtn = (Button)this.findViewById(R.id.login_btn);
 		registerBtn = (Button)this.findViewById(R.id.register_btn);
 		userNameEt = (EditText)this.findViewById(R.id.login_user_name_et);
@@ -70,7 +71,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener,OnChe
 				ToastUtil.toast(LoginActivity.this, "用户名或密码错误!");
 				return;
 			}
-			startActivity(LoginActivity.this,UserMainActivity.class);
+			BaseActivity.startActivity(LoginActivity.this,UserMainActivity.class,-1);
 		}
 		
 		if(isPasswordSave){
@@ -86,6 +87,12 @@ public class LoginActivity extends BaseActivity implements OnClickListener,OnChe
 		super.onResume();
 		initData();
 	}
+	
+	@Override
+	public void onDestroy(){
+		super.onDestroy();
+		MainApplication.getInstance().removeActivity(this);
+	}
 
 	@Override
 	public void onClick(View v) {
@@ -94,7 +101,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener,OnChe
 			login();
 			break;
 		case R.id.register_btn:
-			startActivity(LoginActivity.this,RegisterActivity.class);
+			BaseActivity.startActivity(LoginActivity.this,RegisterActivity.class,-1);
 			break;
 		case R.id.login_select_user_iv:
 			break;
@@ -186,7 +193,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener,OnChe
 		}
 		
 		MainApplication.getInstance().setExit(false);
-		startActivity(LoginActivity.this,UserMainActivity.class);
+		BaseActivity.startActivity(LoginActivity.this,UserMainActivity.class,-1);
 		this.finish();
 	}
 }

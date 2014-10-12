@@ -53,7 +53,6 @@ public class GroupManagerActivity extends BaseActivity implements
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.group_manager_activity);
-
 		pinyinComparatorUtil = new PinyinComparatorUtil();
 		characterParserUtil = CharacterParserUtil.getInstance();
 	}
@@ -270,5 +269,5 @@ public class GroupManagerActivity extends BaseActivity implements
 			}
 		});
 	}
-
+	
 }

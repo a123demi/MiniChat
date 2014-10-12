@@ -8,5 +8,7 @@
     <color name="transparent">#00000000</color>
     <color name="red">#FFFF0000</color>
     <color name="black">#FF000000</color>
+    <color name="blue">#FF0000FF</color>
+    <color name="msg_add_text_color">#CF8E3B</color>
 
 </resources>

@@ -248,7 +248,8 @@ public class DBOperator extends SQLiteOpenHelper {
 						
 						//logger.error(columnName+"++++++++++++++"+columnValue);
 						
-						Field f = tableBean.getField(columnName);
+//						Field f = tableBean.getField(columnName);
+						Field f = tableBean.getDeclaredField(columnName);
 						//methodName.append(columnName);
 						methodName.append(columnName.substring(0, 1).toUpperCase()).append(columnName.substring(1));
 						

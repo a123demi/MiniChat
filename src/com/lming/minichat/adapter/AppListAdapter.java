@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lming.minichat.R;
@@ -51,7 +52,7 @@ public class AppListAdapter extends BaseAdapter {
 			holderView = new HolderView();
 			convertView = mInflater.inflate(R.layout.application_list_grid_view, null);
 			holderView.appListGridViewTv = (TextView) convertView.findViewById(R.id.app_list_grid_view_tv);
-			
+			holderView.appListGridviewIv = (ImageView) convertView.findViewById(R.id.app_list_grid_view_iv);
 			convertView.setTag(holderView);
 		}else{
 			holderView = (HolderView)convertView.getTag();
@@ -59,16 +60,20 @@ public class AppListAdapter extends BaseAdapter {
 		
 		holderView.appListGridViewTv.setText(mAppList.get(position).getAppName());
 		
+		
+		
 		Drawable drawable= mContext.getResources().getDrawable(mAppList.get(position).getAppImgId());
+		holderView.appListGridviewIv.setBackground(drawable);
 		/// 这一步必须要做,否则不会显示.
-		drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-		holderView.appListGridViewTv.setCompoundDrawables(null,drawable,null,null);
+//		drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+//		holderView.appListGridViewTv.setCompoundDrawables(null,drawable,null,null);
 		
 		return convertView;
 	}
 	
 	public class HolderView{
 		public TextView appListGridViewTv;
+		public ImageView appListGridviewIv;
 	}
 
 }

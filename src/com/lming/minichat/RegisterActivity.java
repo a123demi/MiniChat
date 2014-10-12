@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,7 +23,7 @@ import com.lming.minichat.util.StaticParamsUtil;
 import com.lming.minichat.util.ToastUtil;
 import com.lming.minichat.util.ValidateUtil;
 
-public class RegisterActivity extends BaseActivity implements OnClickListener {
+public class RegisterActivity extends Activity implements OnClickListener {
 	private static final String TAG = " RegisterActivity ";
 	private EditText rgtUserNameEt, rgtPasswordEt, rgtRepasswordEt, rgtEmailEt,
 			rgtSecurityCodeEt;
@@ -32,11 +33,11 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register_activity);
+		MainApplication.getInstance().addActivity(this);
 		findById();
 	}
 
-	@Override
-	protected void findById() {
+	private void findById() {
 		rgtUserNameEt = (EditText) this
 				.findViewById(R.id.register_user_name_et);
 		rgtPasswordEt = (EditText) this.findViewById(R.id.register_password_et);
@@ -54,6 +55,13 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 	public void onResume() {
 		super.onResume();
 	}
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		MainApplication.getInstance().removeActivity(this);
+	}
+	
 
 	@Override
 	public void onClick(View v) {
@@ -92,6 +100,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 			return;
 		}
 		
+		//查询登陆用户密码是否存在
 		HashMap<String,String> params = new HashMap<String,String>();
 		params.put("ORDERBY", "registerDate desc");
 		List<Object>  userObjList= DBOperator.getInstance().queryBeanList(DBBean.TB_USER_DB, params);
@@ -106,6 +115,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 		UserInfoManager.getInstance().setmSelfLoginName(loginName);
 		UserInfoManager.getInstance().setmSelfPassword(password);
 
+		//创建默认的GouprBean
 		params.clear();
 		params.put("groupId=", StaticParamsUtil.DEFALUT_GROUP_ID);
 		List<Object> groupObjList = DBOperator.getInstance().queryBeanList(DBBean.TB_GROUP_DB, params);
@@ -148,7 +158,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 		}
 
 		MainApplication.getInstance().setExit(false);
-		startActivity(this, UserMainActivity.class);
+		BaseActivity.startActivity(this, UserMainActivity.class,-1);
 		this.finish();
 	}
 
@@ -161,4 +171,7 @@ public class RegisterActivity extends BaseActivity implements OnClickListener {
 		return true;
 
 	}
+	
+	
+	
 }
