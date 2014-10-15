@@ -49,7 +49,7 @@ public class LocationActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_location);
+		setContentView(R.layout.location_activity);
 		requestLocButton = (Button) findViewById(R.id.button1);
 		mCurrentMode = LocationMode.NORMAL;
 		requestLocButton.setText("普通");

@@ -11,8 +11,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
-     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
@@ -41,16 +40,16 @@
         </activity>
         <activity
             android:name="com.lming.minichat.StartActivity"
-           android:label="@string/login_label" >
+            android:label="@string/login_label" >
              >
         </activity>
         <activity
             android:name="com.lming.minichat.LoginActivity"
             android:label="@string/login_label" >
         </activity>
-        <activity 
-            android:launchMode="singleInstance"
-            android:name="com.lming.minichat.BaseActivity" >
+        <activity
+            android:name="com.lming.minichat.BaseActivity"
+            >
         </activity>
         <activity
             android:name="com.lming.minichat.RegisterActivity"
@@ -58,8 +57,8 @@
         </activity>
         <activity
             android:name="com.lming.minichat.UserMainActivity"
-            android:windowSoftInputMode="adjustPan|stateHidden" 
-            android:label="@string/main_label" >
+            android:label="@string/main_label"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
         </activity>
         <activity
             android:name="com.lming.minichat.GroupManagerActivity"
@@ -81,26 +80,29 @@
         </activity>
         <activity
             android:name="com.lming.minichat.MessageActivity"
-            android:label="@string/message_label" 
-              >
+            android:label="@string/message_label" >
         </activity>
-                <activity
+        <activity
             android:name="com.lming.minichat.LocationActivity"
-            android:label="@string/message_label" 
-              >
+            android:label="@string/message_label" >
         </activity>
-        
-                                <activity
+        <activity
             android:name="com.lming.minichat.MessagePreviewActivity"
-            android:label="@string/message_preview_label" 
-              >
+            android:label="@string/message_preview_label" >
         </activity>
-        
-         <meta-data
+        <activity
+            android:name="com.lming.minichat.AboutActivity"
+            android:label="@string/about_label" >
+        </activity>
+
+        <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="1uaA3YktqstptOIn0f8l6BmV" />
-        
-         <service
+
+        <service 
+            android:name="com.lming.minichat.service.MainService"
+            ></service>
+        <service
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote" >

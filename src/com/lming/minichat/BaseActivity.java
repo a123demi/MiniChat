@@ -62,11 +62,14 @@ public class BaseActivity extends Activity {
 		 * 2.退出所有的activity
 		 * 3.退出进程
 		 */
-		case R.id.action_menu:
+		case R.id.exit_menu:
 			MainApplication.getInstance().setExit(true);
 			MainApplication.getInstance().exitActivity();
-			System.exit(0);
 			
+			System.exit(0);
+			break;
+		case R.id.about_menu:
+			startActivity(BaseActivity.this,AboutActivity.class,Intent.FLAG_ACTIVITY_NO_ANIMATION);
 			break;
 		}
 		

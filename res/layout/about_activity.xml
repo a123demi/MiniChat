@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/about_bg" >
+
+    <ImageView
+        android:id="@+id/about_icon_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/mi_chat_logo" />
+
+    <TextView
+        android:id="@+id/about_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_icon_iv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/about_title"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/about_copyright_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="@string/about_copyright"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/about_version_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/about_copyright_tv"
+        android:layout_below="@id/about_title_tv"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/about_version"
+        android:textSize="@dimen/text_size" />
+
+</RelativeLayout>

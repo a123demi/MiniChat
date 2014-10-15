@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,7 @@ import com.lming.minichat.bean.GroupBean;
 import com.lming.minichat.bean.UserBean;
 import com.lming.minichat.db.DBBean;
 import com.lming.minichat.db.DBOperator;
+import com.lming.minichat.service.MainService;
 import com.lming.minichat.user.UserInfoManager;
 import com.lming.minichat.util.StaticParamsUtil;
 import com.lming.minichat.util.ToastUtil;
@@ -159,9 +161,15 @@ public class RegisterActivity extends Activity implements OnClickListener {
 
 		MainApplication.getInstance().setExit(false);
 		BaseActivity.startActivity(this, UserMainActivity.class,-1);
+		startService();
 		this.finish();
 	}
 
+	/**
+	 * 验证密码
+	 * @param rgtInfoList
+	 * @return
+	 */
 	private boolean validateView(List<String> rgtInfoList) {
 		if (!rgtInfoList.get(1).equals(rgtInfoList.get(2))) {
 			ToastUtil.toast(this, "密码不一致");
@@ -170,6 +178,14 @@ public class RegisterActivity extends Activity implements OnClickListener {
 		// 用户名校验
 		return true;
 
+	}
+	
+	/**
+	 * 登陆成功开启服务
+	 */
+	private void startService(){
+		Intent intent = new Intent(this,MainService.class);
+		this.startService(intent);
 	}
 	
 	

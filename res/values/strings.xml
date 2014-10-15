@@ -9,6 +9,7 @@
     <string name="user_detail_label">用户详情</string>
     <string name="message_label">聊天消息界面</string>
     <string name="message_preview_label">图片预览</string>
+    <string name="about_label">关于</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="user_name">用户名</string>
@@ -42,17 +43,22 @@
     <string name="add_group_input_hint">请输入分组名</string>
     <string name="add_group_cancle">取消</string>
     <string name="add_group_confirm">确认</string>
-    
     <string name="app_sms_content">输入短信内容</string>
-    
+
     <!-- 消息管理 -->
     <string name="msg_add_image">图片</string>
     <string name="msg_add_camera">拍照</string>
     <string name="msg_add_map">地图</string>
     <string name="msg_add_kuaidi">快递</string>
-    
     <string name="add_image">添加图片</string>
-    
+
     <!-- menu -->
-	<string name="exit_menu">退出</string>
+    <string name="about_menu">关于</string>
+    <string name="exit_menu">退出</string>
+
+    <!-- 关于界面 -->
+    <string name="about_title">迷你聊及时通讯</string>
+    <string name="about_version">版本号:</string>
+    <string name="about_copyright">Copyright ©2014 邓良明 All Rights Reserved</string>
+
 </resources>

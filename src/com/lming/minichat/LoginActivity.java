@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.lming.minichat.bean.GroupBean;
 import com.lming.minichat.bean.UserBean;
 import com.lming.minichat.db.DBBean;
 import com.lming.minichat.db.DBOperator;
+import com.lming.minichat.service.MainService;
 import com.lming.minichat.user.UserInfoManager;
 import com.lming.minichat.util.ToastUtil;
 
@@ -194,6 +196,15 @@ public class LoginActivity extends Activity implements OnClickListener,OnChecked
 		
 		MainApplication.getInstance().setExit(false);
 		BaseActivity.startActivity(LoginActivity.this,UserMainActivity.class,-1);
+		startService();
 		this.finish();
+	}
+	
+	/**
+	 * 登陆成功开启服务
+	 */
+	private void startService(){
+		Intent intent = new Intent(this,MainService.class);
+		this.startService(intent);
 	}
 }

@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.Application;
 
 import com.baidu.mapapi.SDKInitializer;
+import com.lming.minichat.service.MainService;
 
 public class MainApplication extends Application {
 	private static MainApplication instance;
@@ -157,6 +158,11 @@ public class MainApplication extends Application {
 	 * 退出activity
 	 */
 	public void exitActivity(){
+		
+		if(MainService.isReady()){
+			MainService.getInstance().stopService();
+		}
+		
 		for(Activity activity:activityList){
 			activity.finish();
 		}
