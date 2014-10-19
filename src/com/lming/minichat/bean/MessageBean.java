@@ -14,7 +14,7 @@ public class MessageBean {
 	private String msgImageId;
 	private String msgImageFile;
 	
-	private String msgVoiceFile;
+	private String msgVoiceUrl;
 	private int isRead;
 	/**
 	 * @return the msgId
@@ -125,16 +125,16 @@ public class MessageBean {
 		this.msgImageFile = msgImageFile;
 	}
 	/**
-	 * @return the msgVoiceFile
+	 * @return the msgVoiceUrl
 	 */
-	public String getMsgVoiceFile() {
-		return msgVoiceFile;
+	public String getMsgVoiceUrl() {
+		return msgVoiceUrl;
 	}
 	/**
-	 * @param msgVoiceFile the msgVoiceFile to set
+	 * @param msgVoiceUrl the msgVoiceUrl to set
 	 */
-	public void setMsgVoiceFile(String msgVoiceFile) {
-		this.msgVoiceFile = msgVoiceFile;
+	public void setMsgVoiceUrl(String msgVoiceUrl) {
+		this.msgVoiceUrl = msgVoiceUrl;
 	}
 	/**
 	 * @return the isRead

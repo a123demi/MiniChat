@@ -10,6 +10,8 @@
     <string name="message_label">聊天消息界面</string>
     <string name="message_preview_label">图片预览</string>
     <string name="about_label">关于</string>
+    <string name="express_label">快递查询</string>
+    <string name="express_info_label">快递查询信息显示</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="user_name">用户名</string>
@@ -60,5 +62,13 @@
     <string name="about_title">迷你聊及时通讯</string>
     <string name="about_version">版本号:</string>
     <string name="about_copyright">Copyright ©2014 邓良明 All Rights Reserved</string>
+
+    <!-- 快递 -->
+    <string name="express_name">快递公司名:</string>
+    <string name="express_num">快递单号:</string>
+    <string name="input_express_num">请输入快递单号</string>
+    <string name="api_id">102616</string>
+    <string name="api_secret">16135ea51cb60246eff620f130a005bd</string>
+    <string name="express_query">查询</string>
 
 </resources>

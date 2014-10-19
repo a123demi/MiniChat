@@ -106,20 +106,20 @@ public class GroupManagerAddActivity extends BaseActivity implements
 			groupBean.setGroupDate(Calendar.getInstance().getTimeInMillis());
 			DBOperator.getInstance().insert(DBBean.TB_GROUP_DB, groupBean);
 		} else {// 修改
-			int groupUserId = UserInfoManager.getInstance().getGroupUserId(groupName);
-			if(groupUserId == -1){
+			int groupUserId = UserInfoManager.getInstance().getGroupUserId(
+					groupName);
+			if (groupUserId == -1) {
 				ToastUtil.toast(this, "该部门不存在");
 				return;
 			}
-			
+
 			params.clear();
 			params.put("id", String.valueOf(groupUserId));
 			ContentValues values = new ContentValues();
 			values.put("groupName", groupNameEt);
 			values.put("groupId", groupFirstSb.toString());
 			DBOperator.getInstance().update(DBBean.TB_GROUP_DB, values, params);
-			
-			
+
 		}
 
 		params.clear();

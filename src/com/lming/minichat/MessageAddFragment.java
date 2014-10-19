@@ -126,7 +126,6 @@ public class MessageAddFragment extends Fragment implements OnClickListener {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.id_msg_add_image_ll:
-			ToastUtil.toast(mContext, "image");
 			processInsertImage();
 			break;
 		case R.id.id_msg_add_camera_ll:
@@ -173,6 +172,9 @@ public class MessageAddFragment extends Fragment implements OnClickListener {
 	 * 快递处理
 	 */
 	private void processKuaidi() {
+		Intent intent  = new Intent();
+		intent.setClass(this.getActivity(), ExpressActivity.class);
+		this.getActivity().startActivity(intent);
 	}
 
 	/**
@@ -191,13 +193,21 @@ public class MessageAddFragment extends Fragment implements OnClickListener {
 //			Bitmap bitmap = null;
 			if (requestCode == LOCAL_IMAGE_CODE) {
 				Uri uri = data.getData();
-				url = uri.toString().substring(
-						uri.toString().indexOf("///") + 2);
 				Log.e("uri", uri.toString());
-				if (url.contains(".jpg") && url.contains(".png")) {
-					Toast.makeText(this.getActivity(), "请选择图片", Toast.LENGTH_SHORT).show();
-					return;
+				
+				if(url.indexOf("media/external/images/") != -1){
+					url = uri.toString().substring(
+							uri.toString().indexOf("//") + 2);
+					if (url.contains(".jpg") && url.contains(".png")) {
+						Toast.makeText(this.getActivity(), "请选择图片", Toast.LENGTH_SHORT).show();
+						return;
+					}
+				}else{
+					url = uri.toString().substring(
+							uri.toString().indexOf("/") + 1);
 				}
+				
+				
 //				bitmap = HelpUtil.getBitmapByUrl(url);
 
 				/**

@@ -1,6 +1,7 @@
 package com.lming.minichat.util;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.os.Environment;
 
 /**
  * 
@@ -58,7 +60,6 @@ public class FileUtils {
 		try {
 			fis = new FileInputStream(url);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			return null;
 		}
@@ -85,5 +86,76 @@ public class FileUtils {
 			}
 		}
 		return bitmap;
+	}
+	
+	/**
+	 * 根据文件夹类型，文件夹名字，创建文件夹，并返回path
+	 * @param dirType
+	 * @param dirName
+	 * @return
+	 */
+	public static String getRootPathByDir(String dirType,String dirName){
+		File rootFile = new File(Environment.getExternalStoragePublicDirectory(dirType),dirName);
+		if(!rootFile.exists()){
+			if(!rootFile.mkdirs()){
+				return null;
+			}
+		}
+		
+		return rootFile.getPath();
+	}
+	
+	/**
+	 * 将毫秒时间转化为00:00:00格式
+	 * @param time
+	 */
+	public static String getTimeByMillSecond(int time){
+		int timeSecond = time/1000;//将毫秒时间转化为秒
+		int minute = timeSecond/60;
+		int hour = minute/60;
+		int second = timeSecond%60;
+		minute = minute %60;
+		
+		StringBuffer timeSb = new StringBuffer();
+		if(hour > 0){
+			if(hour < 10){
+				timeSb.append("0" + hour);
+			}else{
+				timeSb.append(String.valueOf(hour));
+			}
+			
+			timeSb.append(":");
+			
+			if(minute < 10){
+				timeSb.append("0" + minute);
+			}else{
+				timeSb.append(minute);
+			}
+			timeSb.append(":");
+			
+			if(second < 10){
+				timeSb.append("0" + second);
+			}else{
+				timeSb.append(second);
+			}
+		}else{
+			if(minute > 0){
+				if(minute < 10){
+					timeSb.append("0" + minute);
+				}else{
+					timeSb.append(minute);
+				}
+				timeSb.append(":");
+				
+				if(second < 10){
+					timeSb.append("0" + second);
+				}else{
+					timeSb.append(second);
+				}
+			}else{
+				timeSb.append(second).append("\'\'");
+			}
+		}
+		return timeSb.toString();
 	}
 }

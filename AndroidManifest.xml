@@ -24,6 +24,7 @@
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
         android:name="com.lming.minichat.MainApplication"
@@ -47,9 +48,7 @@
             android:name="com.lming.minichat.LoginActivity"
             android:label="@string/login_label" >
         </activity>
-        <activity
-            android:name="com.lming.minichat.BaseActivity"
-            >
+        <activity android:name="com.lming.minichat.BaseActivity" >
         </activity>
         <activity
             android:name="com.lming.minichat.RegisterActivity"
@@ -94,14 +93,21 @@
             android:name="com.lming.minichat.AboutActivity"
             android:label="@string/about_label" >
         </activity>
+        <activity
+            android:name="com.lming.minichat.ExpressActivity"
+            android:label="@string/express_label" >
+        </activity>
+        <activity
+            android:name="com.lming.minichat.ExpressInfoActivity"
+            android:label="@string/express_info_label" >
+        </activity>
 
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="1uaA3YktqstptOIn0f8l6BmV" />
 
-        <service 
-            android:name="com.lming.minichat.service.MainService"
-            ></service>
+        <service android:name="com.lming.minichat.service.MainService" >
+        </service>
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"

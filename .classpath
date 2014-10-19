@@ -7,5 +7,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="libs/BaiduLBS_Android.jar"/>
 	<classpathentry kind="lib" path="libs/locSDK_3.1.jar"/>
+	<classpathentry kind="lib" path="libs/xUtils-2.3.6.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

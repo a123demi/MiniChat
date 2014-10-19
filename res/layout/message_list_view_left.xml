@@ -9,10 +9,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="5dp" 
-        android:src="@drawable/msg_header"
-        />
-    
+        android:layout_marginRight="5dp"
+        android:src="@drawable/msg_header" />
+
     <LinearLayout
         android:id="@+id/msg_lv_content_ll"
         android:layout_width="wrap_content"
@@ -20,24 +19,50 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="5dp"
         android:layout_toRightOf="@id/msg_lv_header_iv"
-        android:background="@drawable/message_receive_msg_selector" 
+        android:background="@drawable/message_receive_msg_selector"
         android:gravity="left" >
 
-          <ImageView
-            android:id="@+id/msg_lv_image_tv"
+        <ImageView
+            android:id="@+id/msg_lv_image_iv"
             android:layout_width="100dp"
             android:layout_height="150dp"
             android:contentDescription="@string/add_image"
             android:gravity="center"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
+
         <TextView
             android:id="@+id/msg_lv_content_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="111111111"
             android:gravity="center"
-            />
+            android:text="111111111" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/msg_lv_voice_ll"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/msg_lv_header_iv"
+        android:background="@drawable/message_receive_msg_selector"
+        android:gravity="center_vertical|left"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/msg_lv_voice_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/add_image"
+            android:gravity="center"
+            android:src="@drawable/msg_talk_voice_playing1" />
+
+        <TextView
+            android:id="@+id/msg_lv_voice_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:text="11" />
     </LinearLayout>
 
 </RelativeLayout>
